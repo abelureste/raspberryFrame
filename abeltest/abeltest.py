@@ -20,7 +20,7 @@ except NotImplementedError:
     pass
 
 if inky_display.resolution == (600, 448):
-    img = Image.open(os.path.join(PATH, "/images/chewycompressed.jpg"))
+    img = Image.open(os.path.join(PATH, "images/chewycompressed.jpg"))
     img = img.resize(inky_display.resolution)
 else:
     print("Your display is not compatible with this program. This program only works for 800x448.")
