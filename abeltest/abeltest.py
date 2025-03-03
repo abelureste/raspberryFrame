@@ -30,7 +30,9 @@ while True:
             inky_display.set_image(img)
             inky_display.show()
 
-            time.sleep(2 * 60)
+            sleep = time.sleep(2 * 60)
+            print(f"Sleeping for {sleep} minutes...")
+
     except Exception as e:
         print(f"Error")
 
