@@ -20,12 +20,12 @@ except NotImplementedError:
 
 # Retrieve image folder path
 PATH = os.path.dirname(__file__)
-imagePath = os.path.dirname(PATH + "images/")
+imagePath = (PATH + "images/")
 
 # Loops indefinitely
 while True:
     try:
-        for images in glob.glob(imagePath, '*.jpg'):
+        for images in glob.glob(os.path.join(imagePath,'*.jpg')):
             img = Image.open(imagePath)
             img = img.resize(inky_display.resolution)
 
