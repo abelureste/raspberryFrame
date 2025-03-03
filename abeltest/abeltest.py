@@ -26,7 +26,7 @@ imagePath = (PATH + "images/")
 while True:
     try:
         for images in glob.glob(os.path.join(imagePath,'*.jpg')):
-            img = Image.open(imagePath)
+            img = Image.open(images)
             img = img.resize(inky_display.resolution)
 
             inky_display.set_image(img)
