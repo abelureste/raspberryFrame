@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, time
+import os, time, glob
 
 from PIL import Image
 from inky.auto import auto
@@ -19,22 +19,26 @@ except NotImplementedError:
     pass
 
 # Retrieve image folder path
-PATH = os.path.dirname(__file__ + "images/...")
+PATH = os.path.dirname(__file__)
+imagePath = os.path.dirname(PATH + "images/")
 
+# Loops indefinitely
 while True:
     try:
-        for filename in PATH:
-            img = Image.open(PATH)
+        for images in glob.glob(imagePath, '*.jpg'):
+            img = Image.open(imagePath)
             img = img.resize(inky_display.resolution)
 
             inky_display.set_image(img)
             inky_display.show()
 
+            img.close()
+
             sleep = time.sleep(2 * 60)
             print(f"Sleeping for {sleep} minutes...")
 
     except Exception as e:
-        print(f"Error")
+        print(f"Error: {e}")
 
 '''
 if inky_display.resolution == (600, 448):
