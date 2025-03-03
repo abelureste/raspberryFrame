@@ -47,8 +47,33 @@
         h1 {
             font-family: Arial, Helvetica, sans-serif; 
             padding-top: 60px; 
+            margin-bottom: 10px;
             font-size: 60px; 
             text-shadow: 0px 2px 2px #919191;
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif; 
+            padding-top: 60px; 
+            margin-bottom: 10px;
+            font-size: 30px; 
+        }
+
+        .croppieContainer {
+            width: auto;
+            height: auto;
+        }
+
+        .photoGrid {
+            display: grid;
+            place-items: center;
+            grid-template-rows: 300px 300px;
+            grid-template-columns: 300px 300px 300px;
+        }
+
+        .photoGrid > img {
+            width: 250px;
+            height: 250px;
         }
 
     </style>
@@ -56,8 +81,18 @@
 <body>
     <section>
         <h1>raspberryFrame</h1>
-        <p style="font-family: Arial, Helvetica, sans-serif; font-size: 30px;">Created by Abel Ureste</p>
-        <img src="" alt="croppedImage" id="croppedImage">
+        <p style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; margin-top: 0px;">Created by Abel Ureste</p>
+        <h2>Your Photo Rotation:</h2>
+        <div style="display: flex;justify-content: center;">
+            <div class="photoGrid">
+            <img src="/abeltest/images/chewycompressed.jpg">
+            <img src="/abeltest/images/chewycompressed.jpg">
+            <img src="/abeltest/images/chewycompressed.jpg">
+            <img src="/abeltest/images/chewycompressed.jpg">
+            <img src="/abeltest/images/chewycompressed.jpg">
+            <img src="/abeltest/images/chewycompressed.jpg">
+            </div>
+        </div>
         <button id="btnCrop">Choose File</button>
     </section>
     <script src="script.js"></script>
