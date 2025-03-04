@@ -23,7 +23,7 @@ PATH = os.path.dirname(__file__)
 imagePath = (PATH + "images/")
 validFormats = ['.jpg','.png']
 
-def printImage(imageFile):
+def printImage():
     imageFiles = [f for f in glob.glob(os.path.join(imagePath, "*")) if f.lower().endswith(validFormats)]
     if not imageFile:
         print("No images found in the directory")
