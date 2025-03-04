@@ -19,7 +19,8 @@ except NotImplementedError:
 
 # Retrieve image folder path
 PATH = os.path.dirname(__file__)
-imagePath = (PATH + "images/")
+imagePath = os.path.join(PATH, "images/")
+print(f"Retrieving images from {imagePath}")
 validFormats = ['.jpg','.png']
 
 def printImage():
@@ -40,7 +41,9 @@ def printImage():
                 inky_display.show()
 
                 img.close()
-                time.sleep(2 * 60)
+                sleepTime = 2 * 60
+                print(f"Sleeping for {sleepTime} minutes...")
+                time.sleep(sleepTime)
 
             except Exception as e:
                 print(f"Error displaying {imageFile}: {e}")
