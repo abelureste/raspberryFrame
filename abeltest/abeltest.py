@@ -21,7 +21,7 @@ except NotImplementedError:
 PATH = os.path.dirname(__file__)
 imagePath = os.path.join(PATH, "images/")
 print(f"Retrieving images from {imagePath}")
-validFormats = ['.jpg','.png']
+validFormats = ('.jpg','.png')
 
 def printImage():
     imageFiles = [f for f in glob.glob(os.path.join(imagePath, "*")) if f.lower().endswith(validFormats)]
