@@ -42,7 +42,7 @@ def printImage():
 
                 img.close()
                 sleepTime = 2 * 60
-                print(f"Sleeping for {sleepTime} minutes...")
+                print(f"Sleeping for {sleepTime / 60} minutes...")
                 time.sleep(sleepTime)
 
             except Exception as e:
