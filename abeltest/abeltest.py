@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os, time, glob
-
 from PIL import Image
 from inky.auto import auto
 
@@ -25,8 +24,10 @@ validFormats = ['.jpg','.png']
 
 def printImage():
     imageFiles = [f for f in glob.glob(os.path.join(imagePath, "*")) if f.lower().endswith(validFormats)]
-    if not imageFile:
+
+    if not imageFiles:
         print("No images found in the directory")
+
     else:
         for imageFile in imageFiles:
             try:
