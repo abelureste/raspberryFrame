@@ -41,7 +41,7 @@ def printImage():
                 inky_display.show()
 
                 img.close()
-                sleepTime = 2 * 60
+                sleepTime = 30 * 60
                 print(f"Sleeping for {sleepTime / 60} minutes...")
                 time.sleep(sleepTime)
 
