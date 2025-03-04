@@ -21,24 +21,33 @@ except NotImplementedError:
 # Retrieve image folder path
 PATH = os.path.dirname(__file__)
 imagePath = (PATH + "images/")
+validFormats = ['.jpg','.png']
+
+def printImage(imageFile):
+    imageFiles = [f for f in glob.glob(os.path.join(imagePath, "*")) if f.lower().endswith(validFormats)]
+    if not imageFile:
+        print("No images found in the directory")
+    else:
+        for imageFile in imageFiles:
+            try:
+                print(f"Displaying: {imageFile}")
+
+                img = Image.open(imageFile)
+                img = img.resize(inky_display.resolution)
+
+                inky_display.set_image(img)
+                inky_display.show()
+
+                img.close()
+                time.sleep(2 * 60)
+
+            except Exception as e:
+                print(f"Error displaying {imageFile}: {e}")
 
 # Loops indefinitely
 while True:
-    try:
-        for images in glob.glob(os.path.join(imagePath,'*.jpg')):
-            img = Image.open(images)
-            img = img.resize(inky_display.resolution)
+    printImage()
 
-            inky_display.set_image(img)
-            inky_display.show()
-
-            img.close()
-
-            sleep = time.sleep(2 * 60)
-            print(f"Sleeping for {sleep} minutes...")
-
-    except Exception as e:
-        print(f"Error: {e}")
 
 '''
 if inky_display.resolution == (600, 448):
